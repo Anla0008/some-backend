@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateBookDto } from './dtos/create-book.dto';
+import { UpdateBookDto } from './dtos/update-book.dto';
 
 @Injectable()
 export class BooksService {
@@ -27,5 +28,11 @@ export class BooksService {
 
   remove(id: string) {
     this.books = this.books.filter((x) => x.id !== id);
+  }
+
+  Update(id: string, dto: UpdateBookDto) {
+    const book = this.findOne(id); //Kaster 404 hvis den ikke findes
+    Object.assign(book, dto); // "Skriver" de nye felter ind i bogen
+    return book;
   }
 }

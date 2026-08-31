@@ -16,6 +16,12 @@ export class BooksService {
       author: 'Frank Herbert',
       year: 1965,
     },
+    {
+      id: '2',
+      title: 'The Hobbit',
+      author: 'J.R.R. Tolkein',
+      year: 1937,
+    },
   ];
   findAll() {
     return this.books;

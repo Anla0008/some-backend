@@ -45,6 +45,6 @@ export class BooksController {
   }
   @Put(':id')
   Update(@Param('id') id: string, @Body() dto: UpdateBookDto) {
-    return this.books.Update(id, dto);
+    return this.books.update(id, dto);
   }
 }

@@ -28,6 +28,12 @@ export class BooksController {
   findAll() {
     return this.books.findAll();
   }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.books.findOne(id);
+  }
+
   @Post()
   create(@Body() dto: CreateBookDto) {
     return this.books.create(dto);

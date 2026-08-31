@@ -26,6 +26,7 @@ export class BooksService {
   findAll() {
     return this.books;
   }
+  // findOne kaster en 'NotFoundException' hvis bogen ikke findes.
   findOne(id: string) {
     const b = this.books.find((x) => x.id === id);
     if (!b) throw new NotFoundException();
